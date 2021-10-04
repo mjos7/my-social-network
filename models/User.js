@@ -4,23 +4,15 @@ const UserSchema = new Schema(
   {
     username: {
       type: String,
-      unique: true,
+      //   unique: true,
       required: true,
       trim: true,
     },
     email: {
       type: String,
       lowercase: true,
-      unique: true,
+      //   unique: true,
       required: 'Email address is required',
-      validate: {
-        validator: () => Promise.resolve(false),
-        message: 'Please enter a valid email address',
-      },
-      match: [
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        'Please enter a valid email address',
-      ],
     },
     thoughts: [
       {

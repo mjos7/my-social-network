@@ -24,7 +24,8 @@
   "homepage": "https://github.com/mjos7/my-social-network#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^6.0.8"
+    "mongoose": "^6.0.8",
+    "mongoose-validator": "^2.1.0"
   },
   "devDependencies": {
     "jest": "^27.2.4",
