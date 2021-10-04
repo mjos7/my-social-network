@@ -4,14 +4,14 @@ const UserSchema = new Schema(
   {
     userName: {
       type: String,
-      unique: true,
-      required: true,
+      //   unique: true,
+      //   required: true,
       trim: true,
     },
     email: {
       type: String,
-      required: true,
-      unique: true,
+      //   required: true,
+      //   unique: true,
       trim: true,
     },
     thoughts: [
@@ -40,7 +40,7 @@ const UserSchema = new Schema(
 // get total count of friends on retrieval
 UserSchema.virtual('friendCount').get(function () {
   return this.friends.reduce(
-    (total, friends) => total + user.friends.length + 1,
+    (total, friend) => total + friend.thoughts.length + 1,
     0
   );
 });
