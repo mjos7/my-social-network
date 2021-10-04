@@ -4,14 +4,14 @@ const UserSchema = new Schema(
   {
     username: {
       type: String,
-      //   unique: true,
+      unique: true,
       required: true,
       trim: true,
     },
     email: {
       type: String,
       lowercase: true,
-      //   unique: true,
+      unique: true,
       required: 'Email address is required',
     },
     thoughts: [
