@@ -13,6 +13,10 @@ const UserSchema = new Schema(
       lowercase: true,
       unique: true,
       required: 'Email address is required',
+      match: [
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+        'Use a valid E-mail address.',
+      ],
     },
     thoughts: [
       {
@@ -44,11 +48,6 @@ UserSchema.virtual('friendCount').get(function () {
     0
   );
 });
-
-var validateEmail = function (email) {
-  var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  return re.test(email);
-};
 
 const User = model('User', UserSchema);
 

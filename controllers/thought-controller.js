@@ -32,7 +32,7 @@ const thoughtController = {
       });
   },
 
-  //create thought user
+  //create thought
   addThought({ body }, res) {
     console.log(body);
     Thought.create(body)
